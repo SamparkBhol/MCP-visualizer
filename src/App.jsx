@@ -168,7 +168,7 @@ function App() {
         transition={{ delay: 0.5, duration: 0.5 }}
         className="text-center mt-10 text-muted-foreground text-xs"
       >
-        <p>MCP Visualizer Kai v0.1.0</p>
+        <p>MCP Visualizer Kai v 1.1.1</p>
         <p>Kawaii AI simulations by Hostinger Horizons! 🎉</p>
       </motion.footer>
     </div>
