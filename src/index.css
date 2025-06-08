@@ -1,0 +1,328 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700&display=swap');
+
+:root {
+  --background: 220 20% 97%; /* Lighter, softer off-white */
+  --foreground: 240 10% 15%; /* Dark, slightly desaturated blue */
+  
+  --card: 0 0% 100%; /* Pure white for cards */
+  --card-foreground: 240 10% 15%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 15%;
+  
+  /* Anime-inspired primary color - vibrant and energetic */
+  --primary: 340 90% 60%; /* Vibrant Pink/Magenta */
+  --primary-foreground: 0 0% 100%; 
+  
+  /* Secondary color - complementary and dynamic */
+  --secondary: 190 80% 55%; /* Bright Cyan/Teal */
+  --secondary-foreground: 240 10% 10%; 
+  
+  --muted: 220 15% 90%; /* Lighter, softer muted tone */
+  --muted-foreground: 220 10% 50%; /* Softer muted text */
+  
+  /* Accent color - for highlights and call-to-actions */
+  --accent: 45 100% 55%; /* Sunny Yellow/Orange */
+  --accent-foreground: 240 10% 10%;
+  
+  --destructive: 0 80% 60%; /* Bright Red for warnings */
+  --destructive-foreground: 0 0% 100%;
+  
+  --border: 220 20% 88%; /* Softer borders */
+  --input: 220 20% 92%; /* Lighter input background */
+  --ring: 340 90% 65%; /* Primary color for focus rings */
+  
+  --radius: 0.75rem; /* Slightly more rounded for a softer, cuter look */
+}
+
+.dark {
+  --background: 240 10% 10%;
+  --foreground: 210 20% 95%;
+  --card: 240 8% 15%;
+  --card-foreground: 210 20% 95%;
+  --popover: 240 8% 15%;
+  --popover-foreground: 210 20% 95%;
+  
+  --primary: 340 85% 65%;
+  --primary-foreground: 210 20% 95%;
+  --secondary: 190 75% 60%;
+  --secondary-foreground: 210 20% 95%;
+  
+  --muted: 240 5% 20%;
+  --muted-foreground: 220 10% 65%;
+  --accent: 45 95% 60%;
+  --accent-foreground: 240 10% 10%;
+  
+  --destructive: 0 75% 65%;
+  --destructive-foreground: 210 20% 95%;
+  
+  --border: 240 5% 25%;
+  --input: 240 5% 22%;
+  --ring: 340 85% 70%;
+}
+
+* {
+  border-color: hsl(var(--border));
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: 
+    radial-gradient(circle at 15% 15%, hsla(var(--primary), 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, hsla(var(--secondary), 0.08) 0%, transparent 40%);
+}
+
+.app-title {
+  font-family: 'Mochiy Pop One', 'Orbitron', sans-serif; /* Playful primary font */
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: hsl(var(--primary));
+  text-shadow: 
+    1px 1px 0px hsla(var(--primary-foreground), 0.7),
+    0 0 8px hsla(var(--primary), 0.3);
+}
+
+.app-card-anime {
+  background-color: hsla(var(--card), 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid hsla(var(--primary), 0.2);
+  border-radius: var(--radius);
+  box-shadow: 
+    0 6px 24px hsla(var(--primary), 0.1),
+    0 0 0 1px hsla(var(--primary), 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.app-card-anime:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 
+    0 10px 30px hsla(var(--primary), 0.15),
+    0 0 0 1px hsla(var(--primary), 0.15);
+}
+
+.app-button-anime {
+  border-radius: calc(var(--radius) - 2px);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 5px hsla(var(--primary), 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.1) inset;
+  border: 1px solid hsla(var(--primary), 0.5);
+  padding: 0.6rem 1.2rem;
+}
+
+.app-button-anime:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 10px hsla(var(--primary), 0.3), 0 1px 2px hsla(0, 0%, 0%, 0.1) inset;
+}
+.app-button-anime:active {
+  transform: translateY(0px) scale(1);
+  box-shadow: 0 1px 3px hsla(var(--primary), 0.2), 0 1px 1px hsla(0, 0%, 0%, 0.15) inset;
+}
+
+.app-input-anime {
+  background-color: hsl(var(--input));
+  border: 2px solid hsl(var(--border));
+  border-radius: calc(var(--radius) - 2px);
+  padding: 0.75rem 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-size: 0.9rem;
+}
+.app-input-anime:focus {
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 3px hsla(var(--ring), 0.25), 0 0 10px hsla(var(--ring), 0.1);
+  outline: none;
+}
+
+.tab-active-anime {
+  background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--secondary)));
+  color: hsl(var(--primary-foreground));
+  box-shadow: 0 3px 8px hsla(var(--primary), 0.3);
+  transform: translateY(-1px);
+}
+
+.tab-inactive-anime {
+  background-color: hsla(var(--muted), 0.5);
+  color: hsl(var(--muted-foreground));
+}
+.tab-inactive-anime:hover {
+  background-color: hsla(var(--primary), 0.1);
+  color: hsl(var(--primary));
+}
+
+.loading-spinner-dynamic {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: hsla(var(--primary-foreground), 0.5) hsla(var(--primary-foreground), 0.5) transparent transparent;
+  box-sizing: border-box;
+  animation: spin-dynamic 1.2s linear infinite;
+}
+.loading-spinner-dynamic::after,
+.loading-spinner-dynamic::before {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent hsl(var(--accent)) hsl(var(--accent));
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  animation: spin-dynamic-inner 0.8s linear infinite;
+}
+
+@keyframes spin-dynamic {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes spin-dynamic-inner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+.execution-step-anime {
+  background-color: hsla(var(--card), 0.85);
+  border-left: 4px solid hsl(var(--muted));
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid hsla(var(--border), 0.7);
+  position: relative;
+  overflow: hidden;
+}
+.execution-step-anime::before { /* decorative shine element */
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, hsla(var(--primary),0.05) 0%, transparent 30%);
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.execution-step-anime.active {
+  border-left-color: hsl(var(--accent));
+  background-color: hsla(var(--accent), 0.1);
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px hsla(var(--accent), 0.15);
+}
+.execution-step-anime.active::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.execution-step-anime.completed {
+  border-left-color: hsl(var(--secondary));
+  background-color: hsla(var(--secondary), 0.08);
+}
+.execution-step-anime:hover {
+  box-shadow: 0 2px 8px hsla(var(--foreground), 0.08);
+}
+
+
+.tool-schema-card-anime {
+  background: linear-gradient(135deg, hsla(var(--card), 0.9), hsla(var(--muted), 0.2));
+  border: 1px solid hsla(var(--border), 0.8);
+  border-radius: var(--radius);
+  padding: 1rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+}
+.tool-schema-card-anime.selected {
+  border-color: hsl(var(--accent));
+  box-shadow: 0 0 15px hsla(var(--accent), 0.2), 0 0 0 2px hsl(var(--accent));
+  transform: scale(1.02);
+}
+.tool-schema-card-anime:hover {
+  transform: translateY(-3px) scale(1.03);
+  border-color: hsl(var(--primary));
+  box-shadow: 0 5px 15px hsla(var(--primary), 0.1);
+}
+
+.code-block-anime {
+  background-color: hsl(230, 20%, 12%); /* Dark, cool background for code */
+  color: hsl(200, 25%, 88%); 
+  padding: 0.8rem 1.2rem;
+  border-radius: calc(var(--radius) / 1.5);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.85rem;
+  overflow-x: auto;
+  border: 1px solid hsl(230, 15%, 25%);
+  box-shadow: inset 0 1px 3px hsla(0,0%,0%,0.2);
+}
+.dark .code-block-anime {
+  background-color: hsl(230, 15%, 18%);
+  border-color: hsl(230, 10%, 30%);
+}
+
+.info-panel-anime {
+  background: linear-gradient(160deg, hsla(var(--primary), 0.05), hsla(var(--secondary), 0.05));
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid hsla(var(--primary), 0.15);
+  box-shadow: 0 4px 12px hsla(var(--foreground), 0.05);
+}
+.info-panel-anime h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  color: hsl(var(--primary));
+  margin-bottom: 0.75rem;
+}
+.info-panel-anime p, .info-panel-anime li {
+  line-height: 1.65;
+  color: hsl(var(--foreground));
+  font-size: 0.925rem;
+}
+.info-panel-anime strong {
+  color: hsl(var(--accent));
+  font-weight: 600;
+}
+
+.gradient-text-anime {
+  background: linear-gradient(60deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--secondary)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: gradient-flow 5s ease-in-out infinite;
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.kawaii-icon { /* For playful icons */
+  display: inline-block;
+  font-size: 1.2em;
+  transition: transform 0.2s ease-out;
+}
+.kawaii-icon:hover {
+  transform: scale(1.2) rotate(-5deg);
+}
