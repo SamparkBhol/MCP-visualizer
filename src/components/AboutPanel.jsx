@@ -45,7 +45,7 @@ const AboutPanel = () => {
           Discover the MCP Visualizer Kai!
         </h2>
         <p className="text-lg text-foreground/80 max-w-2xl mx-auto font-body-font">
-          Welcome,勇者 (Hero)! This is the MCP Visualizer - Kai Edition! Step into an interactive simulation of Anthropic's Model Context Protocol, reimagined with anime flair. It's designed to electrify your understanding of how AI models synergize with tools to conquer complex quests.
+          Welcome,ユーザー ! This is the MCP Visualizer - Kai Edition! Step into an interactive simulation of Anthropic's Model Context Protocol, reimagined with anime flair. It's designed to electrify your understanding of how AI models synergize with tools to conquer complex quests.
         </p>
       </div>
 
@@ -84,7 +84,7 @@ const AboutPanel = () => {
           <HelpCircle className="w-6 h-6 mr-2"/>How This Magic Works
         </h3>
         <p className="text-sm font-body-font text-foreground/80">
-          You, the protagonist, provide a mission directive (a task in natural language). The Visualizer then simulates an AI hero's journey:
+          You, the protagonist, provide a mission directive (a task in natural language). The Visualizer then simulates an AI user's journey:
         </p>
         <ul className="list-none mt-3 space-y-2 text-sm font-body-font">
           {[
